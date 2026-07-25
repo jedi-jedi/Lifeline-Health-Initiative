@@ -1301,28 +1301,28 @@
         <div class="container">
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img class="gallery-item" src="./img/ChatGPT Image Jul 25, 2026, 02_04_58 AM.png" alt="">
+                    <img src="./img/ChatGPT Image Jul 25, 2026, 02_04_58 AM.png" alt="">
                 </div>
                 <div class="gallery-item">
-                    <img class="gallery-item" src="./img/ChatGPT Image Jul 25, 2026, 02_44_23 AM.png" alt="">
+                    <img src="./img/ChatGPT Image Jul 25, 2026, 02_44_23 AM.png" alt="">
                 </div>
                 <div class="gallery-item">
-                    <img class="gallery-item" src="./img/ChatGPT Image Jul 25, 2026, 02_17_59 AM.png" alt="">
+                    <img src="./img/ChatGPT Image Jul 25, 2026, 02_17_59 AM.png" alt="">
                 </div>
                 <div class="gallery-item">
-                    <img class="gallery-item" src="./img/ChatGPT Image Jul 25, 2026, 02_34_35 AM.png" alt="">
+                    <img src="./img/ChatGPT Image Jul 25, 2026, 02_34_35 AM.png" alt="">
                 </div>
                 <div class="gallery-item">
-                    <img class="gallery-item" src="./img/ChatGPT Image Jul 25, 2026, 02_27_41 AM.png" alt="">
+                    <img src="./img/ChatGPT Image Jul 25, 2026, 02_27_41 AM.png" alt="">
                 </div>
                 <div class="gallery-item">
-                    <img class="gallery-item" src="./img/ChatGPT Image Jul 25, 2026, 02_32_46 AM.png" alt="">
+                    <img src="./img/ChatGPT Image Jul 25, 2026, 02_32_46 AM.png" alt="">
                 </div>
                 <div class="gallery-item">
-                    <img class="gallery-item" src="./img/ChatGPT Image Jul 25, 2026, 02_35_52 AM.png" alt="">
+                    <img src="./img/ChatGPT Image Jul 25, 2026, 02_35_52 AM.png" alt="">
                 </div>
                 <div class="gallery-item">
-                    <img class="gallery-item" src="./img/ChatGPT Image Jul 25, 2026, 02_37_00 AM.png" alt="">
+                    <img src="./img/ChatGPT Image Jul 25, 2026, 02_37_00 AM.png" alt="">
                 </div>
             </div>
         </div>
@@ -1520,12 +1520,12 @@
     </footer>
 
     <script>
-        // function toggleMenu() {
-        //     document.getElementById('navLinks').classList.toggle('open');
-        // }
-        // function closeMenu() {
-        //     document.getElementById('navLinks').classList.remove('open');
-        // }
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+        function closeMenu() {
+            document.getElementById('navLinks').classList.remove('open');
+        }
         function selectAmount(btn) {
             document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
@@ -1534,10 +1534,10 @@
             document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
         }
-        // // Close mobile menu on resize to desktop
-        // window.addEventListener('resize', () => {
-        //     if (window.innerWidth > 768) closeMenu();
-        // });
+        // Close mobile menu on resize to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) closeMenu();
+        });
     </script>
 </body>
 </html>
