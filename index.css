@@ -1,4 +1,3 @@
-
 :root {
     --primary-dark: #0f4c5c;
     --primary: #2a9d8f;
@@ -100,6 +99,8 @@ ul { list-style: none; }
 }
 .nav-links a:hover { color: var(--primary-dark); }
 .nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--primary-dark); }
+.nav-links a.active::after { width: 100%; }
 .btn-primary {
     background: var(--accent);
     color: white;
@@ -125,12 +126,56 @@ ul { list-style: none; }
 
 /* ===== HERO ===== */
 .hero {
-    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+    background: var(--primary-dark);
     color: white;
     padding: 100px 24px 120px;
     text-align: center;
     position: relative;
     overflow: hidden;
+}
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+.hero-bg-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+    animation: heroKenBurns 18s ease-in-out infinite alternate;
+}
+@keyframes heroKenBurns {
+    0%   { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+/* Multi-image crossfade rotation — activates automatically once more than
+   one .hero-bg-slide is present (e.g. add a 2nd/3rd image and these rules
+   take over from the single-image Ken-Burns zoom above). Tuned for a
+   3-image, 21s cycle: each photo holds for ~1/3 of the loop with a brief
+   crossfade into the next. For 2 images, just delete the 3rd slide's delay
+   rule and change the cycle length to 14s / delays to 0s & 7s. */
+.hero-bg:has(.hero-bg-slide + .hero-bg-slide) .hero-bg-slide {
+    opacity: 0;
+    animation: heroSlideshow 21s infinite, heroKenBurns 21s ease-in-out infinite alternate;
+}
+.hero-bg:has(.hero-bg-slide + .hero-bg-slide) .hero-bg-slide:nth-child(1) { animation-delay: 0s, 0s; }
+.hero-bg:has(.hero-bg-slide + .hero-bg-slide) .hero-bg-slide:nth-child(2) { animation-delay: 7s, 0s; }
+.hero-bg:has(.hero-bg-slide + .hero-bg-slide) .hero-bg-slide:nth-child(3) { animation-delay: 14s, 0s; }
+@keyframes heroSlideshow {
+    0%   { opacity: 0; }
+    3%   { opacity: 1; }
+    30%  { opacity: 1; }
+    36%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(135deg, rgba(15,76,92,0.58) 0%, rgba(42,157,143,0.18) 100%);
 }
 .hero::before {
     content: '';
@@ -141,6 +186,7 @@ ul { list-style: none; }
     height: 300px;
     background: rgba(255,255,255,0.04);
     border-radius: 50%;
+    z-index: 1;
 }
 .hero::after {
     content: '';
@@ -151,12 +197,20 @@ ul { list-style: none; }
     height: 400px;
     background: rgba(255,255,255,0.03);
     border-radius: 50%;
+    z-index: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero-bg-slide {
+        animation: none;
+        opacity: 0;
+    }
+    .hero-bg-slide:nth-child(1) { opacity: 1; }
 }
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 .hero-badge {
     display: inline-block;
@@ -938,4 +992,49 @@ ul { list-style: none; }
 }
 @media (max-width: 768px) {
     .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+}
+
+/* ===== SCROLL-REVEAL ANIMATIONS ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
+}
+.reveal.reveal-visible,
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger cards within a grid so they animate in one after another */
+.card-grid > .reveal:nth-child(1) { transition-delay: 0s; }
+.card-grid > .reveal:nth-child(2) { transition-delay: 0.08s; }
+.card-grid > .reveal:nth-child(3) { transition-delay: 0.16s; }
+.card-grid > .reveal:nth-child(4) { transition-delay: 0.24s; }
+.card-grid > .reveal:nth-child(5) { transition-delay: 0.32s; }
+.card-grid > .reveal:nth-child(6) { transition-delay: 0.4s; }
+.card-grid > .reveal:nth-child(7) { transition-delay: 0.48s; }
+.card-grid > .reveal:nth-child(8) { transition-delay: 0.56s; }
+
+.gallery-grid > .reveal:nth-child(1) { transition-delay: 0s; }
+.gallery-grid > .reveal:nth-child(2) { transition-delay: 0.06s; }
+.gallery-grid > .reveal:nth-child(3) { transition-delay: 0.12s; }
+.gallery-grid > .reveal:nth-child(4) { transition-delay: 0.18s; }
+.gallery-grid > .reveal:nth-child(5) { transition-delay: 0.24s; }
+.gallery-grid > .reveal:nth-child(6) { transition-delay: 0.3s; }
+.gallery-grid > .reveal:nth-child(7) { transition-delay: 0.36s; }
+.gallery-grid > .reveal:nth-child(8) { transition-delay: 0.42s; }
+
+div[style*="flex-direction:column"] > .event-card.reveal:nth-child(1) { transition-delay: 0s; }
+div[style*="flex-direction:column"] > .event-card.reveal:nth-child(2) { transition-delay: 0.1s; }
+div[style*="flex-direction:column"] > .event-card.reveal:nth-child(3) { transition-delay: 0.2s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate — Lifeline Health Initiatives Nigeria</title>
+    <link rel="icon" type="image/png" href="./img/WhatsApp Image 2026-07-24 at 4.53.29 PM.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <img src="./img/WhatsApp_Image_2026-07-24_at_4.53.29_PM-removebg-preview.png" alt="Lifeline Health Initiatives Nigeria Logo">
+            </a>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="index.html#programs">Programs</a>
+                <a href="index.html#events">Events</a>
+                <a href="index.html#news">News & Blog</a>
+                <a href="index.html#gallery">Gallery</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="donate.html" class="btn-primary active">Donate Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- DONATE -->
+    <section id="donate" class="section">
+        <div class="page-header" style="margin:-80px -24px 60px;">
+            <h1>Make a Donation</h1>
+            <p>Your generosity directly supports women, children, and displaced families in crisis.</p>
+        </div>
+        <div class="container">
+            <div class="donate-card">
+                <h3 style="font-size:20px; font-weight:700; color:var(--primary-dark); margin-bottom:8px; text-align:center;">Choose Your Impact</h3>
+                <p style="color:var(--text-muted); text-align:center; margin-bottom:28px; font-size:14px;">Every contribution brings hope and healing to those who need it most.</p>
+                <div class="amount-grid">
+                    <button class="amount-btn" onclick="selectAmount(this)">
+                        <div class="amount-val">₦25,000</div>
+                        <div class="amount-label">Emergency Kit</div>
+                    </button>
+                    <button class="amount-btn" onclick="selectAmount(this)">
+                        <div class="amount-val">₦50,000</div>
+                        <div class="amount-label">Medical Outreach</div>
+                    </button>
+                    <button class="amount-btn" onclick="selectAmount(this)">
+                        <div class="amount-val">₦100,000</div>
+                        <div class="amount-label">Family Support</div>
+                    </button>
+                </div>
+                <div class="form-group">
+                    <label>Custom Amount (₦)</label>
+                    <input type="number" placeholder="Enter amount">
+                </div>
+                <div class="form-group">
+                    <label>Donation Frequency</label>
+                    <div class="freq-buttons">
+                        <button class="freq-btn active" onclick="selectFreq(this)">One-time</button>
+                        <button class="freq-btn" onclick="selectFreq(this)">Monthly</button>
+                    </div>
+                </div>
+                <button class="btn-accent-lg" style="width:100%;" onclick="alert('Thank you for your generosity! This is a demo donation flow.')">Proceed to Payment</button>
+                <div class="secure-note">🔒 Secure payment processing. Your information is protected.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <img src="https://i.imgur.com/lifelinelogo.png" alt="Lifeline Logo">
+                    <div class="footer-brand-text">
+                        <div class="f-title">LIFELINE</div>
+                        <div class="f-sub">HEALTH INITIATIVES NIGERIA</div>
+                    </div>
+                </div>
+                <p>Empowering healthy futures for crisis-affected women and children across Nigeria through compassionate care, protection, and sustainable development.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="about.html">About Us</a>
+                <a href="index.html#programs">Programs</a>
+                <a href="index.html#events">Events</a>
+                <a href="index.html#news">News &amp; Blog</a>
+                <a href="index.html#gallery">Gallery</a>
+            </div>
+            <div class="footer-col">
+                <h4>Get Involved</h4>
+                <a href="donate.html">Donate</a>
+                <a href="index.html#volunteer">Volunteer</a>
+                <a href="index.html#contact">Partner With Us</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:info@lifelinehealthng.org">info@lifelinehealthng.org</a>
+                <a href="tel:+2348001234567">+234 800 123 4567</a>
+                <span style="font-size:14px; display:block; margin-top:8px;">Abuja, Nigeria</span>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Lifeline Health Initiatives Nigeria. All rights reserved. | Empowering Healthy Futures
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

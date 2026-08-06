@@ -956,14 +956,14 @@
             </a>
             <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
             <div class="nav-links" id="navLinks">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
+                <a href="#home" class="active">Home</a>
+                <a href="about.html">About</a>
                 <a href="#programs">Programs</a>
                 <a href="#events">Events</a>
                 <a href="#news">News & Blog</a>
                 <a href="#gallery">Gallery</a>
                 <a href="#contact">Contact</a>
-                <a href="#donate" class="btn-primary">Donate Now</a>
+                <a href="donate.html" class="btn-primary">Donate Now</a>
             </div>
         </div>
     </nav>
@@ -971,12 +971,18 @@
     <!-- HOME / HERO -->
     <section id="home">
         <div class="hero">
+            <div class="hero-bg">
+                <div class="hero-bg-slide" style="background-image:url('./img/hero-bg-1.jpg');"></div>
+                <div class="hero-bg-slide" style="background-image:url('./img/hero-bg-2.jpg');"></div>
+                <div class="hero-bg-slide" style="background-image:url('./img/hero-bg-3.jpg');"></div>
+            </div>
+            <div class="hero-overlay"></div>
             <div class="hero-content">
                 <!-- <div class="hero-badge">Nonprofit Organization</div> -->
                 <h1>Empowering Healthy Futures<br>for Every Community</h1>
                 <p>A compassionate and resilient society where all crisis-affected women and children have access to care, protection, and opportunities for recovery and growth.</p>
                 <div class="hero-buttons">
-                    <a href="#donate" class="btn-accent-lg">Donate Now</a>
+                    <a href="donate.html" class="btn-accent-lg">Donate Now</a>
                     <a href="#programs" class="btn-white">Our Programs</a>
                 </div>
             </div>
@@ -1064,88 +1070,7 @@
                 <p>Join us in creating a compassionate and resilient society. Your support provides care, protection, and opportunities for recovery and growth.</p>
                 <div class="cta-buttons">
                     <a href="#volunteer" class="btn-light">Become a Volunteer</a>
-                    <a href="#donate" class="btn-primary" style="padding:12px 28px; font-size:14px;">Make a Donation</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT US -->
-    <section id="about" class="section">
-        <div class="page-header" style="margin:-80px -24px 60px;">
-            <h1>About Us</h1>
-            <p>Learn about our mission, vision, and the communities we serve.</p>
-        </div>
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-text">
-                    <span class="section-tag">Our Mission</span>
-                    <h2>A Compassionate and Resilient Society</h2>
-                    <p>Lifeline Health Initiatives Nigeria is dedicated to improving the survival, dignity, protection, health, and well-being of crisis-affected populations. With special attention to internally displaced persons, vulnerable women, sick women, and children, we provide timely humanitarian relief, medical support, and sustainable empowerment programs.</p>
-                </div>
-                <div class="about-img">
-                    <img src="./img/WhatsApp_Image_2026-07-24_at_4.53.29_PM-removebg-preview.png" alt="Lifeline Health Initiatives Nigeria Logo">
-                </div>
-            </div>
-            <div class="objectives-box">
-                <h3>Our Core Objectives</h3>
-                <div class="objectives-grid">
-                    <div class="objective-item">
-                        <div class="objective-num" style="background:var(--primary-dark);">1</div>
-                        <div>
-                            <strong>Humanitarian Relief</strong>
-                            <p>Emergency food, water, clothing, shelter &amp; hygiene supplies</p>
-                        </div>
-                    </div>
-                    <div class="objective-item">
-                        <div class="objective-num" style="background:var(--primary);">2</div>
-                        <div>
-                            <strong>Health &amp; Medical Support</strong>
-                            <p>Medical outreach, maternal care, immunization &amp; nutrition</p>
-                        </div>
-                    </div>
-                    <div class="objective-item">
-                        <div class="objective-num" style="background:var(--accent);">3</div>
-                        <div>
-                            <strong>Protection of Women &amp; Children</strong>
-                            <p>Safe spaces, counseling &amp; GBV survivor support</p>
-                        </div>
-                    </div>
-                    <div class="objective-item">
-                        <div class="objective-num" style="background:var(--primary-dark);">4</div>
-                        <div>
-                            <strong>IDP Support</strong>
-                            <p>Shelter, reintegration &amp; livelihood programs</p>
-                        </div>
-                    </div>
-                    <div class="objective-item">
-                        <div class="objective-num" style="background:var(--primary);">5</div>
-                        <div>
-                            <strong>Education &amp; Child Welfare</strong>
-                            <p>School supplies, learning spaces &amp; family reunification</p>
-                        </div>
-                    </div>
-                    <div class="objective-item">
-                        <div class="objective-num" style="background:var(--accent);">6</div>
-                        <div>
-                            <strong>Livelihood &amp; Empowerment</strong>
-                            <p>Vocational training &amp; income-generating activities</p>
-                        </div>
-                    </div>
-                    <div class="objective-item">
-                        <div class="objective-num" style="background:var(--primary-dark);">7</div>
-                        <div>
-                            <strong>Psychosocial &amp; Community Support</strong>
-                            <p>Mental health, peacebuilding &amp; social cohesion</p>
-                        </div>
-                    </div>
-                    <div class="objective-item">
-                        <div class="objective-num" style="background:var(--primary);">8</div>
-                        <div>
-                            <strong>Advocacy &amp; Awareness</strong>
-                            <p>Rights advocacy, health awareness &amp; stakeholder engagement</p>
-                        </div>
-                    </div>
+                    <a href="donate.html" class="btn-primary" style="padding:12px 28px; font-size:14px;">Make a Donation</a>
                 </div>
             </div>
         </div>
@@ -1389,47 +1314,6 @@
         </div>
     </section>
 
-    <!-- DONATE -->
-    <section id="donate" class="section">
-        <div class="page-header" style="margin:-80px -24px 60px;">
-            <h1>Make a Donation</h1>
-            <p>Your generosity directly supports women, children, and displaced families in crisis.</p>
-        </div>
-        <div class="container">
-            <div class="donate-card">
-                <h3 style="font-size:20px; font-weight:700; color:var(--primary-dark); margin-bottom:8px; text-align:center;">Choose Your Impact</h3>
-                <p style="color:var(--text-muted); text-align:center; margin-bottom:28px; font-size:14px;">Every contribution brings hope and healing to those who need it most.</p>
-                <div class="amount-grid">
-                    <button class="amount-btn" onclick="selectAmount(this)">
-                        <div class="amount-val">₦25,000</div>
-                        <div class="amount-label">Emergency Kit</div>
-                    </button>
-                    <button class="amount-btn" onclick="selectAmount(this)">
-                        <div class="amount-val">₦50,000</div>
-                        <div class="amount-label">Medical Outreach</div>
-                    </button>
-                    <button class="amount-btn" onclick="selectAmount(this)">
-                        <div class="amount-val">₦100,000</div>
-                        <div class="amount-label">Family Support</div>
-                    </button>
-                </div>
-                <div class="form-group">
-                    <label>Custom Amount (₦)</label>
-                    <input type="number" placeholder="Enter amount">
-                </div>
-                <div class="form-group">
-                    <label>Donation Frequency</label>
-                    <div class="freq-buttons">
-                        <button class="freq-btn active" onclick="selectFreq(this)">One-time</button>
-                        <button class="freq-btn" onclick="selectFreq(this)">Monthly</button>
-                    </div>
-                </div>
-                <button class="btn-accent-lg" style="width:100%;" onclick="alert('Thank you for your generosity! This is a demo donation flow.')">Proceed to Payment</button>
-                <div class="secure-note">🔒 Secure payment processing. Your information is protected.</div>
-            </div>
-        </div>
-    </section>
-
     <!-- VOLUNTEER -->
     <section id="volunteer" class="section">
         <div class="page-header" style="margin:-80px -24px 60px;">
@@ -1494,7 +1378,7 @@
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
-                <a href="#about">About Us</a>
+                <a href="about.html">About Us</a>
                 <a href="#programs">Programs</a>
                 <a href="#events">Events</a>
                 <a href="#news">News &amp; Blog</a>
@@ -1502,7 +1386,7 @@
             </div>
             <div class="footer-col">
                 <h4>Get Involved</h4>
-                <a href="#donate">Donate</a>
+                <a href="donate.html">Donate</a>
                 <a href="#volunteer">Volunteer</a>
                 <a href="#contact">Partner With Us</a>
                 <a href="#contact">Contact</a>
@@ -1519,25 +1403,6 @@
         </div>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('open');
-        }
-        function closeMenu() {
-            document.getElementById('navLinks').classList.remove('open');
-        }
-        function selectAmount(btn) {
-            document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-        }
-        function selectFreq(btn) {
-            document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-        }
-        // Close mobile menu on resize to desktop
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) closeMenu();
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
